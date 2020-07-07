@@ -11,6 +11,11 @@
 :root {
   --clr-body-txt: #858585;
   --clr-bg-blue: #0a1c4f;
+  --clr-light-blue: #003da7;
+  --clr-white: #fff;
+  --clr-black: #000;
+  --clr-icons: #d64528;
+  --menu-speed: 0.75s;
 }
 
 html {
@@ -31,4 +36,83 @@ img {
   width: 100%;
 }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+  transition: all 0.35s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  line-height: 2rem;
+  border-radius: 4rem;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+  font-weight: 700;
+}
+
 /* Navigation Section */
+.nav {
+  background-color: var(--clr-bg-blue);
+  color: var(--clr-white);
+  min-height: 10vh;
+  border-bottom: 1px solid var(--clr-white);
+}
+
+.container-nav {
+  margin: auto;
+  padding: 2rem 0rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-link {
+  color: var(--clr-white);
+  text-transform: capitalize;
+  padding: 0 2rem;
+  font-weight: 600;
+}
+
+.menu-links a i {
+  margin-right: 3px;
+  color: var(--clr-icons);
+}
+
+.btn-link {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  padding: 1rem 2.2rem;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.btn-link:hover {
+  background-color: var(--clr-bg-blue);
+  color: var(--clr-white);
+  /* border-radius: 2rem solid var(--clr-white); */
+  border-color: var(--clr-white);
+}
+
+.btn-link:hover i {
+  color: var(--clr-white);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+/* +347697804 */
