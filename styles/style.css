@@ -28,6 +28,7 @@ body {
   font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
+  background: #333;
   color: var(--clr-body-txt);
   font-weight: 400;
 }
@@ -37,7 +38,7 @@ img {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
 }
 
 a {
@@ -64,21 +65,28 @@ a:hover {
   background-color: var(--clr-bg-blue);
   color: var(--clr-white);
   min-height: 10vh;
-  border-bottom: 1px solid var(--clr-white);
+  border-bottom: 0.1rem solid var(--clr-white);
+  position: fixed;
+  width: 100%;
+  z-index: 5;
 }
 
 .container-nav {
-  margin: auto;
+  /* margin: auto; */
   padding: 2rem 0rem;
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
+}
+
+.brand .brand-img {
+  max-width: 15rem;
 }
 
 .menu-links {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
 
 .menu-link {
@@ -115,4 +123,104 @@ a:hover {
 input[type="checkbox"] {
   display: none;
 }
-/* +347697804 */
+
+@media screen and (max-width: 768px) {
+  .brand {
+    display: grid;
+    grid-template-columns:
+      minmax(0.5rem, 1fr)
+      repeat(4, 1fr)
+      minmax(0.5rem, 1fr);
+    gap: 0.5rem;
+  }
+  .brand a {
+    grid-column: 2/4;
+  }
+  .toggler {
+    display: none;
+  }
+  .toggler-label {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    margin-right: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toggler-label span:hover,
+  .toggler-label span:focus {
+    border-radius: 1px solid #fff;
+  }
+
+  .toggler-label span,
+  .toggler-label span::before,
+  .toggler-label span::after {
+    display: block;
+    background: var(--clr-black);
+    height: 0.3rem;
+    width: 2.2rem;
+    border-radius: 0.3rem;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .toggler-label span::before,
+  .toggler-label span::after {
+    content: "";
+    position: absolute;
+  }
+  .toggler-label span::before {
+    bottom: 0.6rem;
+  }
+
+  .toggler-label span::after {
+    top: 0.6rem;
+  }
+
+  .menu-wrap {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--clr-bg-blue);
+    width: 100vw;
+    height: 100vh;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in;
+  }
+
+  .menu-links li {
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  .menu-link {
+    font-size: 1.8rem;
+  }
+  .toggler:checked ~ .toggler-label > span {
+    transform: rotate(45deg);
+  }
+  .toggler:checked ~ .toggler-label > span::before,
+  .toggler:checked ~ .toggler-label > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  .toggler:checked ~ div {
+    transform: scale(1, 1);
+  }
+
+  .toggler:checked ~ div li {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+}
