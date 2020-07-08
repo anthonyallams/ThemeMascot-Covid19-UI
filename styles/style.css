@@ -1,3 +1,24 @@
+/*-----------------------------
+ TABLE OF CONTENT
+* --------------------------------------
+* 01.GLOBAL CSS STYLE
+* 02.TYPOGRAPHY CSS STYLE
+* 03.BUTTONS 
+* 04.NAVIGATION CSS STYLE
+* 05.SHOWCASE CSS STYLES
+* 06.ABOUT US CSS STYLE
+* 07.SYMPTOMS CSS STYLE
+* 08.PREVENTION CSS STYLE
+* 09.DOCTORS CSS STYLE
+* 10.BLOG CSS STYLE
+* 11.FOOTER CSS STYLE
+* 12.SCROLL TO TOP STYLE
+* ----------------------------------------
+*/
+
+/*--------------------
+ 1. GLOBAL CSS STYLE
+-----------------*/
 @import url("https://fonts.googleapis.com/css?family=Oswald:600,700|Barlow:300,400,600");
 
 *,
@@ -22,13 +43,15 @@ html {
   font-size: 62.5%;
 }
 
+/*--------------------
+ 2. TYPOGRAPHY
+-----------------*/
 body {
   max-width: 1400px;
   line-height: 1.5;
   font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  background: #333;
   color: var(--clr-body-txt);
   font-weight: 400;
 }
@@ -50,6 +73,9 @@ a:hover {
   text-decoration: none;
 }
 
+/*--------------------
+ 3. BUTTONS
+-----------------*/
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -60,7 +86,27 @@ a:hover {
   font-weight: 700;
 }
 
-/* Navigation Section */
+.btn-link {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  padding: 1rem 2.2rem;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.btn-link:hover {
+  background-color: var(--clr-bg-blue);
+  color: var(--clr-white);
+  border-color: var(--clr-white);
+}
+
+.btn-link:hover i {
+  color: var(--clr-white);
+}
+
+/*--------------------
+ 4. NAVIGATION CSS STYLE
+-----------------*/
 .nav {
   background-color: var(--clr-bg-blue);
   color: var(--clr-white);
@@ -72,21 +118,25 @@ a:hover {
 }
 
 .container-nav {
-  /* margin: auto; */
   padding: 2rem 0rem;
-  /* display: flex;
-  justify-content: space-around;
-  align-items: center; */
+  display: grid;
+  grid-template-columns: 1fr auto minmax(800px, 3fr) 1fr 1fr;
+}
+
+.brand {
+  grid-column: 2 / 3;
 }
 
 .brand .brand-img {
   max-width: 15rem;
+  min-width: 10rem;
 }
 
 .menu-links {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
+  grid-column: 3 / 5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .menu-link {
@@ -101,59 +151,50 @@ a:hover {
   color: var(--clr-icons);
 }
 
-.btn-link {
-  background-color: var(--clr-white);
-  color: var(--clr-black);
-  padding: 1rem 2.2rem;
-  font-size: 1.4rem;
-  position: relative;
-}
-
-.btn-link:hover {
-  background-color: var(--clr-bg-blue);
-  color: var(--clr-white);
-  /* border-radius: 2rem solid var(--clr-white); */
-  border-color: var(--clr-white);
-}
-
-.btn-link:hover i {
-  color: var(--clr-white);
-}
-
+/* Do not display the toggler and label toggler */
 input[type="checkbox"] {
   display: none;
 }
+.toggler-label {
+  display: none;
+}
 
-@media screen and (max-width: 768px) {
-  .brand {
+/* Hamburger Menu Media Query */
+@media screen and (max-width: 960px) {
+  /* Set the logo position */
+  .container-nav {
     display: grid;
     grid-template-columns:
-      minmax(0.5rem, 1fr)
-      repeat(4, 1fr)
-      minmax(0.5rem, 1fr);
+      minmax(1rem, 1fr)
+      repeat(5, 1fr)
+      minmax(1rem, 1fr);
     gap: 0.5rem;
   }
-  .brand a {
+  .brand {
     grid-column: 2/4;
   }
+
+  /* Checkbox for hamburger. Set to absolute, rather than display:none to allow tabbability  */
   .toggler {
-    display: none;
+    display: absolute;
+    top: -9999px !important;
+    left: -9999px !important;
   }
+  /*  */
+  .toggler:focus ~ .toggler-label {
+    outline: 3px solid var(--clr-white);
+  }
+  /* Hamburger checkbox label */
   .toggler-label {
     position: absolute;
     top: 4rem;
     right: 0;
-    margin-right: 6rem;
+    margin-right: 8rem;
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
-  .toggler-label span:hover,
-  .toggler-label span:focus {
-    border-radius: 1px solid #fff;
-  }
-
+  /* Hamburger Strokes and positioning */
   .toggler-label span,
   .toggler-label span::before,
   .toggler-label span::after {
@@ -179,6 +220,7 @@ input[type="checkbox"] {
     top: 0.6rem;
   }
 
+  /* UL container div, UL div and lis */
   .menu-wrap {
     position: absolute;
     text-align: left;
@@ -192,13 +234,16 @@ input[type="checkbox"] {
     transition: transform 400ms ease-in;
   }
 
-  .menu-links li {
-    margin-bottom: 3rem;
-    margin-left: 3rem;
+  .menu-wrap .menu-links {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+  }
+
+  .menu-wrap .menu-links li {
+    margin-bottom: 3rem;
+    margin-left: 3rem;
     opacity: 0;
     transition: opacity 150ms ease-in-out;
   }
@@ -206,15 +251,8 @@ input[type="checkbox"] {
   .menu-link {
     font-size: 1.8rem;
   }
-  .toggler:checked ~ .toggler-label > span {
-    transform: rotate(45deg);
-  }
-  .toggler:checked ~ .toggler-label > span::before,
-  .toggler:checked ~ .toggler-label > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
 
+  /* Displaying the menu when toggler is checked */
   .toggler:checked ~ div {
     transform: scale(1, 1);
   }
@@ -222,5 +260,15 @@ input[type="checkbox"] {
   .toggler:checked ~ div li {
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
+  }
+
+  /* Make the hamburger into an X */
+  .toggler:checked ~ .toggler-label > span {
+    transform: rotate(45deg);
+  }
+  .toggler:checked ~ .toggler-label > span::before,
+  .toggler:checked ~ .toggler-label > span::after {
+    top: 0;
+    transform: rotate(90deg);
   }
 }
