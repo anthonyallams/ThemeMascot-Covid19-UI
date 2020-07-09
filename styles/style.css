@@ -27,6 +27,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -278,3 +279,4 @@ input[type="checkbox"] {
     transform: rotate(1.125turn);
   }
 }
+
