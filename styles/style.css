@@ -122,20 +122,19 @@ img {
   .about-container {
     grid-template-columns: 1fr;
     justify-items: center;
+    align-content: center;
+    margin: auto;
   }
 
   .about-img {
     grid-column: 1 / -1;
     background-image: url("/images/about-img1.jpg") no-repeat center
       center/cover;
-    background-size: 50% 100%;
-    max-width: 80%;
-    /* max-height: 100%; */
-    /* min-height: 80%; */
+    width: 100%;
+    min-height: 50rem;
     position: relative;
-    /* max-width: 80rem; */
     border-radius: 0.6rem;
-    margin-right: 10rem;
+    margin: auto;
   }
 
   .about-img::after {
@@ -150,6 +149,10 @@ img {
   }
 
   .about-content {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
   }
+}
+
+/* CTA SECTION */
+.cta {
 }
