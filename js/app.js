@@ -12,3 +12,15 @@ $("#nav a, .btn").on("click", (e) => {
     );
   }
 });
+
+//Collapse hamburger on anchor/li click
+let menu = document.querySelector(".menu-wrap");
+let closeIcon = document.querySelector(".toggler");
+
+menu.addEventListener("click", handleMenuClick);
+
+function handleMenuClick(event) {
+  if (event.target instanceof HTMLAnchorElement) {
+    closeIcon.checked = false;
+  }
+}
