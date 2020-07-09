@@ -205,6 +205,7 @@ input[type="checkbox"] {
     border-radius: 0.3rem;
     position: relative;
     cursor: pointer;
+    transition: transform ease-in-out 500ms, opacity linear 300ms;
   }
 
   .toggler-label span::before,
@@ -270,5 +271,10 @@ input[type="checkbox"] {
   .toggler:checked ~ .toggler-label > span::after {
     top: 0;
     transform: rotate(90deg);
+  }
+  /* Micro Interaction(rotate) for hamburger strokes */
+  .toggler:checked ~ .toggler-label:hover > span,
+  .toggler:checked ~ .toggler-label:focus > span {
+    transform: rotate(1.125turn);
   }
 }
