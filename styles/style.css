@@ -116,6 +116,8 @@ a:hover {
   padding: 1.2rem 2.4rem;
   text-transform: uppercase;
   border-radius: 5rem;
+  text-align: center;
+  min-width: 20rem;
 }
 
 .btn-large:hover {
@@ -184,14 +186,12 @@ input[type="checkbox"] {
 .showcase {
   position: relative;
   background: url(/images/showcase1.jpg) no-repeat center center/cover;
-  height: 100vh;
   color: var(--clr-white);
-  padding: 2rem;
+  padding: 5rem;
 }
 
 .showcase::before {
   content: "";
-
   position: absolute;
   top: 0;
   left: 0;
@@ -203,10 +203,10 @@ input[type="checkbox"] {
 
 .showcase-container {
   display: grid;
-  grid-template-columns: 1fr minmax(4rem, 2fr) 1fr;
+  grid-template-columns: 1fr minmax(30rem, 2fr) 1fr;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  min-height: 50vh;
 }
 
 .showcase-content {
@@ -224,17 +224,20 @@ input[type="checkbox"] {
   letter-spacing: 0.4rem;
   margin: 10rem 0 2rem;
   font-size: 1.3rem;
+  min-width: 28rem;
 }
 
 .l-heading {
   font-size: 6rem;
   margin: 2rem 0;
-  line-height: 1;
+  line-height: 1.1;
+  min-width: 30rem;
 }
 
 .lead {
   font-size: 1.8rem;
   margin-bottom: 3rem;
+  min-width: 30rem;
 }
 
 /*--------------------
