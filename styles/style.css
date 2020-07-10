@@ -75,14 +75,10 @@ p {
   width: 50%;
 }
 
-.symptoms-card-row {
+.symptoms-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5rem;
-}
-
-.symptoms-card-row + .symptoms-card-row {
-  margin-top: 3rem;
+  gap: 4rem;
 }
 
 .symptom-card {
@@ -122,8 +118,20 @@ p {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 880px) {
+  .symptoms-content {
+    width: 90%;
+  }
+
+  .symptoms-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 600px) {
+  .symptoms-cards {
+    grid-template-columns: 1fr;
+  }
 }
