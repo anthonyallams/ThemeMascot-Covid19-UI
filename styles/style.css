@@ -142,6 +142,7 @@ a:hover {
   padding: 2rem 0rem;
   display: grid;
   grid-template-columns: 1fr auto minmax(800px, 3fr) 1fr 1fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .brand {
@@ -260,9 +261,7 @@ input[type="checkbox"] {
 
   /* Checkbox for hamburger. Set to absolute, rather than display:none to allow tabbability  */
   .toggler {
-    display: absolute;
-    top: -9999px !important;
-    left: -9999px !important;
+    display: none;
   }
   /*  */
   .toggler:focus ~ .toggler-label {
