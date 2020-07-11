@@ -111,7 +111,7 @@ a:hover {
   background-color: var(--clr-bg-blue);
   color: var(--clr-white);
   min-height: 10vh;
-  border-bottom: 0.1rem solid var(--clr-white);
+  border-width: thin;
   position: fixed;
   width: 100%;
   z-index: 5;
@@ -121,7 +121,17 @@ a:hover {
   padding: 2rem 0rem;
   display: grid;
   grid-template-columns: 1fr auto minmax(800px, 3fr) 1fr 1fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
+
+/* .container-nav::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  top: 9rem;
+  left: 11rem;
+  right: 22rem;
+} */
 
 .brand {
   grid-column: 2 / 3;
@@ -176,9 +186,7 @@ input[type="checkbox"] {
 
   /* Checkbox for hamburger. Set to absolute, rather than display:none to allow tabbability  */
   .toggler {
-    display: absolute;
-    top: -9999px !important;
-    left: -9999px !important;
+    display: none;
   }
   /*  */
   .toggler:focus ~ .toggler-label {
@@ -276,5 +284,9 @@ input[type="checkbox"] {
   .toggler:checked ~ .toggler-label:hover > span,
   .toggler:checked ~ .toggler-label:focus > span {
     transform: rotate(1.125turn);
+  }
+
+  .menu-wrap .btn-link {
+    margin-left: 1rem;
   }
 }
