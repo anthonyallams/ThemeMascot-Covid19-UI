@@ -34,6 +34,7 @@ body {
   font-size: 16px;
   color: var(--clr-bg-blue);
   font-weight: 400;
+  margin: auto;
 }
 
 img {
@@ -61,7 +62,7 @@ p {
 
 /* SYMPTOMS SECTION */
 .symptoms {
-  padding: 10rem 5rem;
+  padding: 10rem 6rem;
 }
 
 .symptoms-content {
@@ -78,7 +79,7 @@ p {
 .symptoms-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .symptom-card {
@@ -96,7 +97,6 @@ p {
 
 .symptom-card:hover {
   background: var(--clr-bg-blue);
-  color: var(--clr-bg-blue) !important;
 }
 
 .symptom-card img {
