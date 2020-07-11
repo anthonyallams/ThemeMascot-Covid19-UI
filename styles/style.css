@@ -27,6 +27,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -290,3 +291,4 @@ input[type="checkbox"] {
     margin-left: 1rem;
   }
 }
+
