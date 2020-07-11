@@ -136,3 +136,21 @@ p {
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 880px) {
+  .prevention-content {
+    width: 90%;
+  }
+
+  .prevention-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .prevention-cards {
+    grid-template-columns: 1fr;
+  }
+}
