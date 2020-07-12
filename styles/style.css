@@ -1,3 +1,6 @@
+/*--------------------
+ 1. GLOBAL CSS STYLE
+-----------------*/
 @import url("https://fonts.googleapis.com/css?family=Oswald:600,700|Barlow:300,400,600");
 
 *,
@@ -12,6 +15,11 @@
 :root {
   --clr-body-txt: #858585;
   --clr-bg-blue: #0a1c4f;
+  --clr-light-blue: #003da7;
+  --clr-white: #fff;
+  --clr-black: #000;
+  --clr-icons: #d64528;
+  --menu-speed: 0.75s;
 }
 
 html {
@@ -24,20 +32,170 @@ body {
   font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  color: var(--clr-body-txt);
+  color: var(--clr-bg-blue);
   font-weight: 400;
+  margin: auto;
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
-/* Navigation Section */
+p {
+  color: #7b7b7b;
+}
 
-/* Showcase Section */
-/* About Section */
-/* Symptoms Section */
-/* Preventions Section */
-/* Doctor Section */
-/* Blog Section */
-/* Footer Section */
+/* ABOUT US SECTION */
+.becareful {
+  padding: 6rem 10rem;
+}
+
+.becareful-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+}
+
+.becareful-img {
+  grid-column: 1 / 2;
+  background: url("/images/becareful.png") no-repeat center center/cover;
+  width: 100%;
+  padding-right: 20rem;
+}
+
+.becareful-content {
+  grid-column: 2 / 3;
+}
+
+.title {
+  color: #d64528;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.m-heading {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 2rem 0;
+}
+
+.becareful-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 3rem 0;
+}
+
+.becareful-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.becareful-card .card-title {
+  font-size: 1.6rem;
+  color: #50658e;
+}
+
+.becareful-card h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.becareful-card:first-child {
+  color: #17a2b8;
+}
+.becareful-card:nth-child(2) {
+  color: #dc3545;
+}
+.becareful-card:last-child {
+  color: #28a745;
+}
+
+.black-text {
+  color: var(--clr-black);
+}
+
+.update-info {
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .becareful-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+    margin: auto;
+  }
+
+  .becareful-img {
+    grid-column: 1 / -1;
+    background-image: url("/images/becareful.png") no-repeat center center/cover;
+    max-width: 100%;
+    min-height: 50rem;
+  }
+
+  .becareful-content {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .becareful {
+    padding: 6rem 8rem;
+  }
+  .becareful-img {
+    min-height: 40rem;
+    padding: 0;
+    margin: auto 0;
+  }
+  .becareful-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 660px) {
+  .becareful {
+    padding: 6rem 4rem;
+  }
+  .becareful-img {
+    min-height: 35rem;
+    padding: 0;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 660px) {
+  .becareful-img {
+    min-height: 30rem;
+    padding: 0;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .becareful-img {
+    min-height: 25rem;
+    padding: 0;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 330px) {
+  .becareful-img {
+    min-height: 20rem;
+    padding: 0;
+    margin: auto 0;
+  }
+
+  .m-heading {
+    font-size: 3.2rem;
+  }
+}
