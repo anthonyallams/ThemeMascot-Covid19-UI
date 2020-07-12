@@ -60,8 +60,6 @@ p {
   grid-column: 1 / 2;
   background: url("/images/becareful.png") no-repeat center center/cover;
   width: 100%;
-  border-radius: 0.6rem;
-  margin-right: 10rem;
   padding-right: 20rem;
 }
 
@@ -125,4 +123,79 @@ p {
 
 .update-info {
   font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .becareful-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+    margin: auto;
+  }
+
+  .becareful-img {
+    grid-column: 1 / -1;
+    background-image: url("/images/becareful.png") no-repeat center center/cover;
+    max-width: 100%;
+    min-height: 50rem;
+  }
+
+  .becareful-content {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .becareful {
+    padding: 6rem 8rem;
+  }
+  .becareful-img {
+    min-height: 40rem;
+    padding: 0;
+    margin: auto 0;
+  }
+  .becareful-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 660px) {
+  .becareful {
+    padding: 6rem 4rem;
+  }
+  .becareful-img {
+    min-height: 35rem;
+    padding: 0;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 660px) {
+  .becareful-img {
+    min-height: 30rem;
+    padding: 0;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .becareful-img {
+    min-height: 25rem;
+    padding: 0;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 330px) {
+  .becareful-img {
+    min-height: 20rem;
+    padding: 0;
+    margin: auto 0;
+  }
+
+  .m-heading {
+    font-size: 3.2rem;
+  }
 }
