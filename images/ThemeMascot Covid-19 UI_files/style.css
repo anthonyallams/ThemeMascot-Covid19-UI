@@ -1,0 +1,209 @@
+/*--------------------
+ 1. GLOBAL CSS STYLE
+-----------------*/
+@import url("https://fonts.googleapis.com/css?family=Oswald:600,700|Barlow:300,400,600");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --clr-body-txt: #858585;
+  --clr-bg-blue: #0a1c4f;
+  --clr-light-blue: #003da7;
+  --clr-white: #fff;
+  --clr-black: #000;
+  --clr-icons: #d64528;
+  --menu-speed: 0.75s;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  max-width: 1400px;
+  line-height: 1.5;
+  font-family: "Barlow", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  color: var(--clr-bg-blue);
+  font-weight: 400;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  color: #7b7b7b;
+}
+
+.title {
+  color: #d64528;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.m-heading {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+}
+
+/* SYMPTOMS SECTION */
+.symptoms {
+  padding: 10rem 6rem;
+}
+
+.symptoms-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  margin: 2rem auto 4rem;
+  padding: 2rem 0;
+  width: 50%;
+}
+
+.symptoms-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.symptom-card {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  padding: 3rem;
+}
+
+.symptom-card:hover {
+  background: var(--clr-bg-blue);
+}
+
+.symptom-card img {
+  width: 40%;
+  margin: auto;
+}
+
+.symptom-card .card-info {
+  margin-top: 2rem;
+}
+
+.symptom-card:hover .card-title,
+.symptom-card:hover p {
+  color: var(--clr-white);
+}
+
+.symptom-card .card-title {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+/* PREVENTION SECTION */
+.prevention {
+  padding: 5rem 6rem;
+  background: var(--clr-bg-blue);
+}
+
+.prevention .title,
+.prevention .m-heading,
+.prevention p,
+.prevention .card-title {
+  color: var(--clr-white);
+}
+
+.prevention-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  margin: 2rem auto 4rem;
+  padding: 2rem 0;
+  width: 50%;
+}
+
+.prevention-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.prevention-card {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  background: rgba(255, 255, 255, 0.07);
+  transition: 0.4s ease all;
+  border-radius: 0.5rem;
+  padding: 3rem;
+}
+
+.prevention-card:hover {
+  box-shadow: 0px 20px 10px 0px #0000001a;
+}
+
+.prevention-card p {
+  color: var(--clr-white);
+  padding: 0 3rem;
+}
+
+.prevention-card img {
+  width: 1000%;
+  margin: auto;
+  border-radius: 0.5rem;
+}
+
+.prevention-card .card-info {
+  margin-top: 2rem;
+}
+
+.prevention-card:hover .card-title,
+.prevention-card:hover p {
+  color: var(--clr-white);
+}
+
+.prevention-card .card-title {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 880px) {
+  .symptoms-content {
+    width: 90%;
+  }
+
+  .symptoms-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .symptoms-cards {
+    grid-template-columns: 1fr;
+  }
+}
