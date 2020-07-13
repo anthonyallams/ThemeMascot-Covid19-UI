@@ -220,3 +220,51 @@ a:hover {
 .footer-social .social-item i {
   color: var(--clr-white);
 }
+
+@media (max-width: 880px) {
+  .footer {
+    padding: 4rem;
+  }
+  /* .footer-content {
+    width: 90%;
+  } */
+
+  .footer-row {
+    display: grid;
+    /* grid-template-columns: 3fr minmax(1rem, 2rem) repeat(4, 1fr); */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-text,
+  .footer-web,
+  .footer-links,
+  .footer-support {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 570px) {
+  .footer {
+    padding: 2rem 4;
+  }
+  .footer-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    margin-bottom: 2rem;
+  }
+
+  .footer-appendage {
+    padding: 2rem 2rem 1rem;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    color: var(--clr-white);
+  }
+}
