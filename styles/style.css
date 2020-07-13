@@ -60,78 +60,111 @@ p {
   margin: 1.5rem 0 1rem;
 }
 
-/* SYMPTOMS SECTION */
-.symptoms {
-  padding: 10rem 6rem;
+/* DOCTORS SECTION */
+.doctors {
+  padding: 6rem;
+  background: #f9f9f9;
+  margin: auto;
 }
 
-.symptoms-content {
+.doctors-content {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   align-content: center;
-  margin: 2rem auto 4rem;
+  margin: 2rem auto;
   padding: 2rem 0;
   width: 50%;
 }
 
-.symptoms-cards {
+.doctors-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
 }
 
-.symptom-card {
+.doctor-card {
   grid-column: span 1;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   align-content: center;
-  background: #f9f9f9;
-  border: 1px solid #eee;
+  border: none;
+}
+
+.doctor-card-display {
+  border: 0.6rem solid #fff;
   border-radius: 0.5rem;
-  padding: 3rem;
+  position: relative;
+  width: 100%;
 }
 
-.symptom-card:hover {
-  background: var(--clr-bg-blue);
-}
-
-.symptom-card img {
-  width: 40%;
-  margin: auto;
-}
-
-.symptom-card .card-info {
+.doctor-card .card-info {
   margin-top: 2rem;
 }
 
-.symptom-card:hover .card-title,
-.symptom-card:hover p {
-  color: var(--clr-white);
+.doctor-card-img {
+  width: 100%;
+  height: 22rem;
 }
 
-.symptom-card .card-title {
+.img1 {
+  background: url(/images/doc1.jpg) no-repeat center center/cover;
+}
+.img2 {
+  background: url(/images/doc2.jpg) no-repeat center center/cover;
+}
+.img3 {
+  background: url(/images/doc3.jpg) no-repeat center center/cover;
+}
+.img4 {
+  background: url(/images/doc4.jpg) no-repeat center center/cover;
+}
+
+.doctor-card-display .social-info {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  opacity: 0;
+  z-index: 1;
+}
+
+.doctor-card-display .social-info .social-item {
+  padding: 1rem;
+}
+
+.social-item i {
+  color: #fff;
+}
+
+.doctor-card-display::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a1c4fcc;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+.doctor-card-display:hover::after,
+.doctor-card-display:hover .social-info {
+  opacity: 1;
+}
+
+.doctor-card .card-title {
   text-transform: capitalize;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 880px) {
-  .symptoms-content {
-    width: 90%;
-  }
-
-  .symptoms-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .symptoms-cards {
-    grid-template-columns: 1fr;
-  }
 }
