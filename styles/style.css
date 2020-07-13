@@ -161,3 +161,25 @@ p {
   height: 100%;
   margin: auto;
 }
+
+@media (max-width: 880px) {
+  .blog-content {
+    width: 100%;
+  }
+
+  .blog-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog {
+    padding: 2rem;
+  }
+  .blog-cards {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
