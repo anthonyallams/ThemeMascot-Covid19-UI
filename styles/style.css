@@ -1,3 +1,6 @@
+/*--------------------
+ 1. GLOBAL CSS STYLE
+-----------------*/
 @import url("https://fonts.googleapis.com/css?family=Oswald:600,700|Barlow:300,400,600");
 
 *,
@@ -12,6 +15,11 @@
 :root {
   --clr-body-txt: #858585;
   --clr-bg-blue: #0a1c4f;
+  --clr-light-blue: #003da7;
+  --clr-white: #fff;
+  --clr-black: #000;
+  --clr-icons: #d64528;
+  --menu-speed: 0.75s;
 }
 
 html {
@@ -24,20 +32,154 @@ body {
   font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  color: var(--clr-body-txt);
+  color: var(--clr-bg-blue);
   font-weight: 400;
+  margin: auto;
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
-/* Navigation Section */
+p {
+  color: #7b7b7b;
+}
 
-/* Showcase Section */
-/* About Section */
-/* Symptoms Section */
-/* Preventions Section */
-/* Doctor Section */
-/* Blog Section */
-/* Footer Section */
+.title {
+  color: #d64528;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.m-heading {
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+}
+
+/* BLOG SECTION */
+.blog {
+  padding: 6rem 8rem;
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  margin: 2rem auto 4rem;
+  padding: 2rem 0;
+  width: 60%;
+}
+
+.blog-content p {
+  padding: 0 3rem;
+}
+
+.blog-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding-bottom: 2rem;
+}
+
+.blog-card {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--clr-white);
+  cursor: pointer;
+  border: 1px solid #f5f5f5;
+  transition: all 0.6s ease;
+}
+
+.blog-card:hover {
+  box-shadow: 0px 0px 20px #0000000d;
+}
+
+.blog-card .card-info {
+  padding: 2rem;
+}
+
+.blog-card .card-title {
+  text-transform: capitalize;
+  margin: 1rem 0 0.5rem;
+  font-size: 2.2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-align: left;
+}
+
+.blog-card .card-info h3,
+.blog-card .card-info p,
+.blog-card .card-info a {
+  padding: 1rem;
+}
+.blog-card .card-info p,
+.blog-card .card-info a {
+  text-align: justify;
+}
+
+.blog-card .card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-bg-blue);
+  justify-self: left;
+  padding: 1rem 0;
+}
+
+.blog-card .blog-meta {
+  text-transform: capitalize;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.blog-meta span {
+  margin: 0 1rem;
+  color: #7b7b7b;
+}
+
+.blog-meta i {
+  padding: 1rem;
+  color: #d64528;
+}
+
+.blog-card:hover .card-title {
+  color: #d64528;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+@media (max-width: 880px) {
+  .blog-content {
+    width: 100%;
+  }
+
+  .blog-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog {
+    padding: 2rem;
+  }
+  .blog-cards {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
