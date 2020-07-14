@@ -186,7 +186,7 @@ input[type="checkbox"] {
 -----------------*/
 .showcase {
   position: relative;
-  background: url(/images/showcase1.jpg) no-repeat center center/cover;
+  background: url(../images/showcase1.jpg) no-repeat center center/cover;
   color: var(--clr-white);
   padding: 5rem;
 }
@@ -218,19 +218,20 @@ input[type="checkbox"] {
   justify-content: center;
   align-items: center;
   z-index: 1;
+  margin: auto;
 }
 
 .subtitle {
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  margin: 10rem 0 2rem;
+  margin: 6rem 0 2rem;
   font-size: 1.3rem;
   min-width: 28rem;
 }
 
 .l-heading {
   font-size: 6rem;
-  margin: 2rem 0;
+  margin: 0.5rem 0 2rem;
   line-height: 1.1;
   min-width: 30rem;
 }
@@ -244,6 +245,35 @@ input[type="checkbox"] {
 /*--------------------
  13. MEDIA QUERIES STYLE
 -----------------*/
+@media screen and (max-width: 992px) {
+  .showcase-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+  }
+
+  .showcase-content {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .showcase {
+    padding: 5rem;
+  }
+  .subtitle,
+  .l-heading,
+  .lead {
+    max-width: 80%;
+  }
+}
+
 /* Hamburger Menu Media Query */
 @media screen and (max-width: 960px) {
   /* Set the logo position */
@@ -360,5 +390,32 @@ input[type="checkbox"] {
   .toggler:checked ~ .toggler-label:hover > span,
   .toggler:checked ~ .toggler-label:focus > span {
     transform: rotate(1.125turn);
+  }
+
+  .showcase-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+  }
+
+  .showcase-content {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .showcase {
+    padding: 5rem 1rem;
+  }
+  .subtitle,
+  .l-heading,
+  .lead {
+    max-width: 80%;
   }
 }
